@@ -1,0 +1,74 @@
+.masseus-info {
+    background: #00AE86;
+    color:#fff;
+    padding: 10px;
+    margin-top:22px;
+    border:1px solid #fff;
+}
+.user-info {
+    background: #00AE86;
+    color:#fff;
+    padding: 10px;
+    margin-top:22px;
+    border:1px solid #fff;
+}
+.fix {
+    margin-top: -44px;
+}
+.left-page {
+    background: #ffffff;
+    height:0 auto;
+}
+.right-page {
+    background:#F2F0F0;
+    height: 100%;
+}
+.right-page-settings {
+    background:#F2F0F0;
+    height: 100vh;
+}
+.info-user {
+    margin-top: 120px;
+}
+.jasa {
+    background: #fff;
+    margin-left:30px;
+    padding:20px;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+.jasa-hasil-cari {
+    background: #F2F0F0 ;
+    margin-left:30px;
+    padding:20px;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+.list-masseus li {
+    list-style: none;
+    margin-right: 30px;
+}
+.img-masseus {
+    margin-bottom:10px;
+}
+.img-user {
+    margin-bottom: 20px;
+}
+.account_settings {
+    background: #fff;
+    margin-left:30px;
+    padding:20px;
+    margin-top:15px;
+}
+.detail-massage  {
+    font-size: 17px;
+    border-spacing: 30px;
+    border-collapse: separate;
+}
+.list-info-user li {
+    list-style: none;
+    text-align: center;
+    margin:0px 35px 0px 0px;
+    font-size: 17px;
+    font-weight: bold;
+}
