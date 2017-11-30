@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStatusToMassageServices extends Migration
+class AddStatusToTukangs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddStatusToMassageServices extends Migration
      */
     public function up()
     {
-        Schema::table('massage_services', function (Blueprint $table) {
-            $table->string('status', 30);
+        Schema::table('tukangs', function (Blueprint $table) {
+             $table->string('status', 30)->after('tariff');
         });
     }
 
@@ -25,8 +25,8 @@ class AddStatusToMassageServices extends Migration
      */
     public function down()
     {
-        Schema::table('massage_services', function (Blueprint $table) {
-             $table->dropColumn('status');
+        Schema::table('tukangs', function (Blueprint $table) {
+            $table->dropColumn('status');
         });
     }
 }

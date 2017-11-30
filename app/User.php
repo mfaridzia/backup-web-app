@@ -27,6 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
+
     // fungsi cek admin apa bukan
     public function isAdmin()
     {

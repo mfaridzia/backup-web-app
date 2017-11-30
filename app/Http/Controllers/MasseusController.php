@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Massage_Service;
 use App\User;
+use App\Order;
+use App\Tukang;
 use Illuminate\Http\Request;
 
 class MasseusController extends Controller
 {
     public function index()
     {
-        $masseuss = Massage_Service::all();
-        return view('home', compact('masseuss', 'users'));
+        $masseuss = Tukang::paginate(4);
+        $orders   = Order::all();
+        return view('home', compact('masseuss', 'orders'));
     }
 
     public function search(Request $request)
     {
         $query   = $request->get('q');
-        $results = Massage_Service::where('name', 'LIKE', '%' . $query . '%')->paginate(2);
+        $results = Tukang::where('name', 'LIKE', '%' . $query . '%')->paginate(2);
 
         return view('masseus.search_results', compact('query', 'results'));
     }       
@@ -51,8 +53,10 @@ class MasseusController extends Controller
      */
     public function show($id)
     {
-        $masseus = Massage_Service::find($id);
-        return view('masseus.single', compact('masseus'));
+        $masseus = Tukang::find($id);
+        $check_date   = Order::whereDate('order_date', '=', \Carbon\Carbon::today()->toDateString());
+
+        return view('masseus.single', compact('masseus', 'check_date'));
     }
 
     /**

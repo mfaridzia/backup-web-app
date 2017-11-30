@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMassageServicesTable extends Migration
+class CreateTukangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateMassageServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('massage_services', function (Blueprint $table) {
+        Schema::create('tukangs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->text('address');
+            $table->string('number_phone', 15);
             $table->integer('age');
-            $table->integer('number_phone');
-            $table->string('photo', 100);
             $table->string('gender', 20);
+            $table->string('photo', 100);
             $table->double('tariff');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -33,6 +32,6 @@ class CreateMassageServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('massage_services');
+        Schema::dropIfExists('tukangs');
     }
 }

@@ -15,14 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('order_date');
+            $table->string('name', 50);
+            $table->timestamps('order_date');
             $table->text('booking_address');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->timestamps('start_time');
+            $table->timestamps('end_time');
             $table->double('total_peyment');
             $table->string('status', 20);
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('massage_services_id');
             $table->timestamps();
         });
     }

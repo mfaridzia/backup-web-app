@@ -1,8 +1,18 @@
+/* UNTUK HALAMAN RESULT SEARCH */
+.right-page-home-result {
+    background:#F2F0F0;
+    height: 100vh;
+}
+.right-page-result {
+    background:#F2F0F0;
+    height: 100%;
+}
+/* UNTUK HALAMAN RESULT SEARCH */
 .masseus-info {
     background: #00AE86;
     color:#fff;
     padding: 10px;
-    margin-top:22px;
+    /* margin-top:22px; */
     border:1px solid #fff;
 }
 .user-info {
@@ -23,7 +33,19 @@
     background:#F2F0F0;
     height: 100%;
 }
+.right-page-home {
+    background:#F2F0F0;
+    height: 103vh;
+}
 .right-page-settings {
+    background:#F2F0F0;
+    height: 100vh;
+}
+.right-page-settings-edit {
+    background:#F2F0F0;
+    height: 100%;
+}
+.right-page-order {
     background:#F2F0F0;
     height: 100vh;
 }
@@ -38,7 +60,7 @@
     margin-bottom: 15px;
 }
 .jasa-hasil-cari {
-    background: #F2F0F0 ;
+    background: #fff;
     margin-left:30px;
     padding:20px;
     margin-top:15px;
@@ -60,6 +82,14 @@
     padding:20px;
     margin-top:15px;
 }
+.account_settings-edit {
+    background: #fff;
+    margin-left:30px;
+    padding:20px;
+    margin-top:15px;
+    margin-bottom: 30px;
+    height: 0 auto;
+}
 .detail-massage  {
     font-size: 17px;
     border-spacing: 30px;
@@ -71,4 +101,50 @@
     margin:0px 35px 0px 0px;
     font-size: 17px;
     font-weight: bold;
+    /* font-weight: normal; */
+}
+.pagination {
+    margin-left:115px;
+}
+
+/* LOGIN CUSTOME PAGE */
+#container-page {
+    background:#fff;
+}
+A{
+    color:rgb(9, 204, 159);
+}
+
+/* REGISTER CUSTOME PAGE */
+
+
+/* DASHBORAD */
+.btn-box {
+    text-decoration:none;
+    padding:8px 16px;
+    color:#00AE86;
+    background: #fff;
+    border-radius:3px;
+}
+.btn-box:hover {
+    text-decoration: none;
+}
+.glyphicon {
+    font-size:25px; color:#fff;
+}
+.text-title-box {
+    color:#fff;  font-size:17px;
+}
+.box-dashboard {
+    height:130px; border-radius:2px;background:#00AE86;
+}
+
+.icon-mastel-2 {
+    margin-left:40px;   
+}
+.icon-mastel {
+    width:45px;
+    height: 40px;
+    margin-top:50px;   
+    margin-left:50px;
 }

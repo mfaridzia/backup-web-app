@@ -4,7 +4,7 @@
 
 <div class="container-fluid fix">
         <div class="row">
-            <div class="col-md-4 left-page">
+            <div class="col-md-3 left-page">
 
             <!-- <div class="row">
                 <h3 class="user-info text-center"> Info Customer </h3>   
@@ -25,12 +25,10 @@
                                 <form action="" method="GET">
                                     {{ csrf_field() }}
                                     <div class="input-group">
-                                    <input type="search" name="q" class="form-control" placeholder="Cari tukang pijit..">
-                                    <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                    </button>
-                                    </div>
+                                         <input type="search" name="q" class="form-control" placeholder="Search by name..." required>
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-default">Go</button>
+                                        </span>
                                     </div>
                                 </form>
 
@@ -52,12 +50,31 @@
    -->
             </div>    
 
-            <div class="col-md-8">
+            @if(count($results) < 6)
+                <div class="col-md-9 right-page-home-result">
+            @else
+                <div class="col-md-9 right-page-result">
+            @endif
                 <div class="row">
                     <h3 class="masseus-info text-center"> Hasil Pencarian Tukang Pijit </h3>   
                 </div>
 
-                @if(count($results))
+                @if(count($results) === 1)
+                    <div class="row col-md-offset-2">  
+                    @foreach($results as $result)
+                        <div class="col-md-8 jasa-hasil-cari">
+                            <center> <img src="{{ asset('storage/photo/' . $result->photo) }}" alt="" class="img-responsive img-circle  img-masseus" width="70" height="50"> </center>
+
+                            <ul class="list-masseus text-center">
+                                <li> <b> {{ $result->name }} </b> </li> 
+                                <li> <b> Tarif : Rp. {{ $result->tariff }} </b> </li>
+                            </ul>
+
+                            <center> <a href="/masseus/{{ $result->id }}" class="btn btn-success"> Lihat Detail </a> </center>  
+
+                        </div>    
+                    @endforeach
+                @elseif(count($results))
                 <div class="row col-md-offset-1 ">  
                     @foreach($results as $result)
                         <div class="col-md-5 jasa-hasil-cari">
@@ -77,7 +94,13 @@
                 {{ $results->links() }}
 
                 @else
-                     <div class="card-panel red darken-3 white-text">Oops.. Data <b>{{$query}}</b> Tidak Ditemukan</div>
+                     <div> 
+                     
+                        <h3 class="text-center" style="margin-top:200px;"> Oops.. Pencarian dengan Nama <b>{{$query}}</b> Tidak Ditemukan <h3>
+
+                        <center> <a href="/home" class="btn btn-lg btn-success"> Back to Home </a> </center>
+                     
+                     </div>
                 @endif
 
             </div>  

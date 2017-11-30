@@ -8,10 +8,58 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Mastel') }}</title>
+    <title> MasTel </title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
+    <link href="/datatables/datatables-asset/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="/datatables/datatables-asset/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <style>
+        .text-logo {
+            color:#00AE86;
+        }
+        .logo-mastel {
+            margin-top:-5px;
+        }
+        @media (min-width: 1100px) {
+            .right-page-home {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            .right-page-settings {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            .right-page-order {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            /* .paging-home {
+                margin-left:-100px;
+            } */
+        }
+
+        @media (max-width: 1000px) {
+            .right-page-home {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            .right-page-settings {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            .right-page-order {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            .paging-home {
+                margin-left:-100px;
+            }
+        }
+    </style>
 </head>
 <body style="background-color:#fff;">
     <div id="app">
@@ -28,9 +76,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
-                        <!-- <img src="{{ asset('img/logo-mastel.png') }}" alt="" width="100" height="90"> -->
-                        MasTel
+                    <a class="navbar-brand" href="{{ url('/') }}" style="font-weight:bold; color:#00AE86;">
+                        <img src="{{ asset('img/new-logo3.png') }}" alt="Logo-MasTel" class="logo-mastel">
+                        <!-- MasTel -->
                     </a>
                 </div>
 
@@ -44,16 +92,16 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Masuk</a></li>
+                            <li><a href="{{ route('register') }}">Daftar</a></li>
                         @else
 
                         @if(Auth::user()->user_type == "admin")
-                             <li><a href="{{ route('admin') }}"> Dashboard Admin </a></li>
+                             <li><a href="{{ route('admin') }}"> Dashboard </a></li>
                         @endif
 
                             <li><a href="{{ route('home') }}"> Beranda </a></li>
-                            <li><a href="{{ route('login') }}"> Pesanan </a></li>
+                            <!-- <li><a href="{{ route('login') }}"> Pesanan </a></li> -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -87,5 +135,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script> -->
+    <script src="/datatables/datatables-asset/js/jquery.dataTables.min.js"></script>
+    <script src="/datatables/datatables-asset/js/dataTables.bootstrap.min.js"></script>
+    @yield('scripts')
 </body>
 </html>

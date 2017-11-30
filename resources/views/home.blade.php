@@ -4,7 +4,7 @@
 
 <div class="container-fluid fix">
         <div class="row">
-            <div class="col-md-4 left-page">
+            <div class="col-md-3 left-page">
 
             <!-- <div class="row">
                 <h3 class="user-info text-center"> Info Customer </h3>   
@@ -24,13 +24,11 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <form action="/query" method="GET">
                                 {{ csrf_field() }}
-                                    <div class="input-group">
-                                    <input type="search" name="q" class="form-control" placeholder="Cari tukang pijit..">
-                                    <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                    </button>
-                                    </div>
+                                   <div class="input-group">
+                                         <input type="search" name="q" class="form-control" placeholder="Search by name..." required>
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-default">Go</button>
+                                        </span>
                                     </div>
                                 </form>
 
@@ -52,15 +50,19 @@
    -->
             </div>    
 
-            <div class="col-md-8 right-page">
+            @if(count($masseuss) < 6)
+                <div class="col-md-9 right-page-home right-page-home-result">
+            @else
+                 <div class="col-md-9  right-page">
+            @endif
                 <div class="row">
                     <h3 class="masseus-info text-center"> Daftar Tukang Pijit </h3>   
                 </div>
-
+                
                 <div class="row col-md-offset-1 ">  
                     @foreach($masseuss as $masseus)
-                        <div class="col-md-5 jasa jasa-1">
-                            <center> <img src="{{ asset('storage/photo/' . $masseus->photo) }}" alt="" class="img-responsive img-circle  img-masseus" width="70" height="50"> </center>
+                        <div class="col-md-5 col-sm-5 col-xs-5 jasa jasa-1 home-list">
+                            <center> <img src="{{ asset('storage/photo/' . $masseus->photo) }}" alt="" class="img-responsive img-circle img-masseus" width="70" height="50"> </center>
 
                             <ul class="list-masseus text-center">
                                 <li> <b> {{ $masseus->name }} </b> </li> 
@@ -71,9 +73,10 @@
 
                         </div>    
                     @endforeach
-                        
-                    
+                                    
                 </div>
+
+                 <div class="paging-home"> {{ $masseuss->links() }} </div>
 
             </div>  
               

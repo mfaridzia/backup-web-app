@@ -4,7 +4,7 @@
 
 <div class="container-fluid fix">
         <div class="row">
-            <div class="col-md-4 left-page">
+            <div class="col-md-3 left-page">
 
             <!-- <div class="row">
                 <h3 class="user-info text-center"> Info Customer </h3>   
@@ -25,12 +25,10 @@
                                 <form action="/query" method="GET">
                                 {{ csrf_field() }}
                                     <div class="input-group">
-                                    <input type="search" name="q" class="form-control" placeholder="Cari tukang pijit..">
-                                    <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                    </button>
-                                    </div>
+                                         <input type="search" name="q" class="form-control" placeholder="Search by name..." required>
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-default">Go</button>
+                                        </span>
                                     </div>
                                 </form>
 
@@ -38,7 +36,7 @@
                         </div>
                        
                     </div>
-                </div>
+            </div>
 
                 <!-- <div class="row">
                     <div class="col-md-12">
@@ -52,47 +50,40 @@
    -->
             </div>    
 
-            <div class="col-md-8">
-                <div class="row col-md-offset-0" style="margin-top:20px;">  
-                   <h1 class="text-center"> Daftar Pesanan Customer </h1>
+        <div class="container-fluid">
+            <div class="col-md-9">
+                <div class="row col-md-offset-1" style="margin-top:60px;">  
+                  
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-6 jasa box-dashboard">
 
-                    <div class="table-responsive">
-                   <table class="table table-responsive table-striped">
-                        <tr>
-                            <th> Nama </th>
-                            <th> No Telephone </th>
-                            <th> Alamat </th>
-                            <th> Tanggal Order </th>
-                            <th> Jam Order </th>
-                            <th> Total Bayar </th>
-                            <th> Status </th>
-                        </tr>
-                        <tr>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                        </tr>
-                        <tr>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                            <td> Nama Customer </td>
-                        </tr>
-                        
-                   </table>
-                   </div>
+                        <i class="glyphicon glyphicon-tags"></i>
+                        <p class="text-title-box"> Lihat Pesanan </p>
+
+                        <a href="/order/show-orders" class="btn-box">Lihat</a>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6 jasa box-dashboard">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <p class="text-title-box"> Tukang Pijit </p>
+
+                        <a href="/masseus/tambah" class="btn-box">Lihat</a>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6 jasa box-dashboard">
+
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <p class="text-title-box"> Data User </p>
+
+                        <a href="" class="btn-box">Lihat</a>
+                        </div>
+                    </div>
 
                 </div>
 
             </div>  
-              
+        </div>   
 
         </div>
 </div>

@@ -5,10 +5,10 @@
 <div class="container-fluid fix">
         <div class="row">
 
-            <div class="col-md-4 left-page">
+            <div class="col-md-3 left-page">
                 <div class="row">
                     <div class="col-md-12 info-user">
-                        <center> <img src="{{ asset('img/user.png') }}" alt="" class="img-responsive img-circle img-user" width="100" height="50"> </center>
+                        <center> <img src="{{ asset('storage/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-circle img-user" width="100" height="50"> </center>
 
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>
@@ -20,14 +20,25 @@
                 </div>
             </div>    
 
-            <div class="col-md-8 right-page-settings">
+            <div class="col-md-9 right-page-home-result">
                 <div class="row">
                     <h3 class="masseus-info text-center"> Account Settings </h3>   
                 </div>
 
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        @if (session()->has('notification'))
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                {{ session('notification') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="row col-md-offset-2">  
                     <div class="col-md-8 account_settings">
-                         <center> <img src="{{ asset('img/user.png') }}" alt="" class="img-responsive img-circle  img-masseus" width="70" height="50"> </center>
+                         <center> <img src="{{ asset('storage/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-circle  img-masseus" width="70" height="50"> </center>
 
                          <ul class="list-info-user user-2">
                             <li> {{ $user->name }} </li> 
@@ -36,8 +47,8 @@
                          </ul>
 
                         <center> 
-                            <button class="btn btn-primary text-center"> Update Data </button> 
-                            <button class="btn btn-primary text-center"> Change Password </button> 
+                            <a href="/user/{{$user->id}}/edit" class="btn btn-success text-center">Update Data</a>
+                            <a href="/user/ganti-password/{{$user->id}}/edit" class="btn btn-success text-center">Ganti Password</a>
                         </center>
 
                     </div>    
