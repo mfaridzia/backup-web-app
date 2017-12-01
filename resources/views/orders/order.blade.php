@@ -25,6 +25,17 @@
                     <h3 class="masseus-info text-center"> Pemesanan Layanan</h3>   
                 </div>
 
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        @if (session()->has('notification'))
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                {{ session('notification') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="row col-md-offset-2">  
                     <div class="col-md-8 account_settings-edit">
                         <!-- ----- -->

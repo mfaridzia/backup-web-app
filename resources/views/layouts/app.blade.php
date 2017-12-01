@@ -25,10 +25,10 @@
             margin-top:-5px;
         }
         @media (min-width: 1100px) {
-            .right-page-home {
+            /* .right-page-home-result-home {
                 background:#F2F0F0;
                 height: 100%;
-            }
+            } */
             .right-page-settings {
                 background:#F2F0F0;
                 height: 100%;
@@ -43,7 +43,7 @@
         }
 
         @media (max-width: 1000px) {
-            .right-page-home {
+            .right-page-home-result-home {
                 background:#F2F0F0;
                 height: 100%;
             }
@@ -51,7 +51,15 @@
                 background:#F2F0F0;
                 height: 100%;
             }
+            .right-page-home-result {
+                background:#F2F0F0;
+                height: 100%;
+            }
             .right-page-order {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            .right-page-single-page {
                 background:#F2F0F0;
                 height: 100%;
             }

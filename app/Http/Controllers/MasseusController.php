@@ -42,7 +42,34 @@ class MasseusController extends Controller
      */
     public function store(Request $request)
     {
-        dd('done!');
+        // validasi
+        $this->validate($request, [
+            'name'         => 'required|min:5',
+            'address'      => 'required|min:15',
+	        'number_phone' => 'required|min:12',
+            'age'          => 'required|min:2',
+            'gender'       => 'required',
+            'photo'        => 'mimes:jpeg,jpeg,png|max:1000',
+            'tariff'       => 'required'
+        ]);
+
+        // proses simpan foto
+        $filename = time() . '.png';
+        $request->file('photo')->storeAs('public/photo', $filename);
+        
+        $tukang = Tukang::create([
+            'name'         => $request->name,
+            'address'      => $request->address,
+            'number_phone' => $request->number_phone,
+            'age'          => $request->age,
+            'gender'       => $request->gender,
+            'photo'        => $filename,
+            'tariff'       => $request->tariff,
+            'status'       => 'testdata',
+        ]);
+
+        $request->session()->flash('notification', 'Sukses Menambah Data!');
+        return redirect('/masseus/tambah');
     }
 
     /**

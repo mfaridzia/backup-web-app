@@ -83,7 +83,7 @@ class UserController extends Controller
         } 
         else {
             // alert error
-            $request->session()->flash('notification-error', 'Password not changed!');
+            $request->session()->flash('notification-error', 'Terjadi kesalahan!');
             return redirect('user/ganti-password/'. $id .'/edit');
         }
 

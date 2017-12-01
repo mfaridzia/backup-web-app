@@ -39,8 +39,8 @@ class OrderController extends Controller
             'tukang_id'       => $masseus_id
         ]);
 
-        $request->session()->flash('notification', 'Success Order Tukang Pijit');
-        return redirect('/home');
+        $request->session()->flash('notification', 'Sukses Pesan Tukang Pijit');
+        return redirect('order/masseus/' . $masseus_id);
         
     }
 

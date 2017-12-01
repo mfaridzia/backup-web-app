@@ -15,6 +15,14 @@
     /* margin-top:22px; */
     border:1px solid #fff;
 }
+.right-page-single-page {
+    background:#F2F0F0;
+    height: 112vh;
+}
+.right-page-home-result-home {
+    background:#F2F0F0;
+    height: 103vh;
+}
 .user-info {
     background: #00AE86;
     color:#fff;
@@ -145,6 +153,7 @@ A{
 .icon-mastel {
     width:45px;
     height: 40px;
+    
     margin-top:50px;   
     margin-left:50px;
 }

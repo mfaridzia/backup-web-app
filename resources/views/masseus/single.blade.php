@@ -20,7 +20,7 @@
                 </div>
             </div>    
 
-            <div class="col-md-9 right-page">
+            <div class="col-md-9 right-page-single-page">
                 <div class="row">
                     <h3 class="masseus-info text-center">Info Detail Tukang Pijit </h3>   
                 </div>

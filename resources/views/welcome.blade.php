@@ -45,7 +45,7 @@
             margin-top:75px;
         }
         .image-home:hover {
-            opacity:0.8;
+            opacity:0.9;
         }
     </style>
 </head>
@@ -145,7 +145,7 @@
                 </div>
 
                 <div class="col-md-6">
-                     <img src="{{ asset('img/image-home.png') }}" alt="image-home" class="image-home">
+                     <img src="{{ asset('img/image-home.png') }}" alt="image-home-mastel" class="image-home">
                 </div>
 
             </div>

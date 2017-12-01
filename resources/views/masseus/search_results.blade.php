@@ -77,7 +77,7 @@
                 @elseif(count($results))
                 <div class="row col-md-offset-1 ">  
                     @foreach($results as $result)
-                        <div class="col-md-5 jasa-hasil-cari">
+                        <div class="col-md-5 col-md-5 col-sm-5 col-xs-10 jasa-hasil-cari">
                             <center> <img src="{{ asset('storage/photo/' . $result->photo) }}" alt="" class="img-responsive img-circle  img-masseus" width="70" height="50"> </center>
 
                             <ul class="list-masseus text-center">
@@ -95,8 +95,11 @@
 
                 @else
                      <div> 
-                     
-                        <h3 class="text-center" style="margin-top:200px;"> Oops.. Pencarian dengan Nama <b>{{$query}}</b> Tidak Ditemukan <h3>
+                    
+                        <h3 class="text-center" style="margin-top:150px;">
+                           <p style="font-size:60px;"> :( <p> 
+                             Oops.. Pencarian dengan Nama <b> <i> {{$query}} </i> </b> Tidak Ditemukan 
+                        <h3>
 
                         <center> <a href="/home" class="btn btn-lg btn-success"> Back to Home </a> </center>
                      

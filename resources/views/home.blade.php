@@ -51,12 +51,12 @@
             </div>    
 
             @if(count($masseuss) < 6)
-                <div class="col-md-9 right-page-home right-page-home-result">
+                <div class="col-md-9 right-page-home-result-home">
             @else
-                 <div class="col-md-9  right-page">
+                 <div class="col-md-9 right-page">
             @endif
                 <div class="row">
-                    <h3 class="masseus-info text-center"> Daftar Tukang Pijit </h3>   
+                    <h3 class="masseus-info text-center"> Daftar Tukang Pijat </h3>   
                 </div>
                 
                 <div class="row col-md-offset-1 ">  

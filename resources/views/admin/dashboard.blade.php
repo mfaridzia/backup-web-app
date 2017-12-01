@@ -57,26 +57,26 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-3 col-xs-6 jasa box-dashboard">
 
-                        <i class="glyphicon glyphicon-tags"></i>
-                        <p class="text-title-box"> Lihat Pesanan </p>
+                            <i class="glyphicon glyphicon-tags"></i>
+                            <p class="text-title-box"> Lihat Pesanan </p>
 
-                        <a href="/order/show-orders" class="btn-box">Lihat</a>
+                            <a href="/order/show-orders" class="btn-box">Lihat</a>
                         </div>
 
                         <div class="col-md-3 col-sm-3 col-xs-6 jasa box-dashboard">
 
-                        <i class="glyphicon glyphicon-user"></i>
-                        <p class="text-title-box"> Tukang Pijit </p>
+                            <i class="glyphicon glyphicon-user"></i>
+                            <p class="text-title-box"> Tukang Pijit </p>
 
-                        <a href="/masseus/tambah" class="btn-box">Lihat</a>
+                            <a href="/masseus/tambah" class="btn-box">Tambah</a>
                         </div>
 
                         <div class="col-md-3 col-sm-3 col-xs-6 jasa box-dashboard">
 
-                        <i class="glyphicon glyphicon-list-alt"></i>
-                        <p class="text-title-box"> Data User </p>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            <p class="text-title-box"> Data User </p>
 
-                        <a href="" class="btn-box">Lihat</a>
+                            <a href="" class="btn-box">Lihat</a>
                         </div>
                     </div>
 
