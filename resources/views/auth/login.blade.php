@@ -130,7 +130,31 @@
             </div>
         </nav>
 
+
     <div class="container" style="margin-top:100px;">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            @if (session()->has('warning-register'))
+                <div class="alert alert-warning text-center">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ session('warning-register') }}
+                </div>
+            @endif
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            @if (session()->has('warning'))
+                <div class="alert alert-danger text-center">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ session('warning') }}
+                </div>
+            @endif
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">

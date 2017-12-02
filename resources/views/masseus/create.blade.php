@@ -13,7 +13,7 @@
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>
                             <li> {{ Auth::user()->email }} </li>
-                            <li> {{ Auth::user()->number_phone }} </li>
+                            <li> <span class="number-phone-font"> {{ Auth::user()->number_phone }} </span> </li>
                         </ul>
 
                     </div>
@@ -22,7 +22,7 @@
 
             <div class="col-md-9 right-page-settings-edit">
                 <div class="row">
-                    <h3 class="masseus-info text-center"> Tambah Data Tukang Pijat </h3>   
+                    <h3 class="masseus-info text-center" style="font-size:21px;"> Tambah Data Tukang Pijat </h3>   
                 </div>
 
                 <div class="row">

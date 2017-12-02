@@ -17,7 +17,7 @@
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>
                             <li> {{ Auth::user()->email }}</li>
-                            <li> {{ Auth::user()->number_phone }} </li>
+                            <li> <span class="number-phone-font"> {{ Auth::user()->number_phone }} </span> </li>
                         </ul>
 
                         <div class="row">
@@ -67,7 +67,7 @@
 
                             <ul class="list-masseus text-center">
                                 <li> <b> {{ $result->name }} </b> </li> 
-                                <li> <b> Tarif : Rp. {{ $result->tariff }} </b> </li>
+                                <li> <b class="number-phone-font"> Tarif : Rp. {{ $result->tariff }} </b> </li>
                             </ul>
 
                             <center> <a href="/masseus/{{ $result->id }}" class="btn btn-success"> Lihat Detail </a> </center>  
@@ -82,7 +82,7 @@
 
                             <ul class="list-masseus text-center">
                                 <li> <b> {{ $result->name }} </b> </li> 
-                                <li> <b> Tarif : Rp. {{ $result->tariff }} </b> </li>
+                                <li> <b class="number-phone-font"> Tarif : Rp. {{ $result->tariff }} </b> </li>
                             </ul>
 
                             <center> <a href="/masseus/{{ $result->id }}" class="btn btn-success"> Lihat Detail </a> </center>  
@@ -98,7 +98,7 @@
                     
                         <h3 class="text-center" style="margin-top:150px;">
                            <p style="font-size:60px;"> :( <p> 
-                             Oops.. Pencarian dengan Nama <b> <i> {{$query}} </i> </b> Tidak Ditemukan 
+                             Oops.. Pencarian dengan Nama <b> {{$query}} </b> Tidak Ditemukan 
                         <h3>
 
                         <center> <a href="/home" class="btn btn-lg btn-success"> Back to Home </a> </center>

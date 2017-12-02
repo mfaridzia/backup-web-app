@@ -13,6 +13,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran|Lato|Rubik" rel="stylesheet">
 
     <link href="/datatables/datatables-asset/css/jquery.dataTables.css" rel="stylesheet">
     <link href="/datatables/datatables-asset/css/dataTables.bootstrap.css" rel="stylesheet">
@@ -23,6 +24,11 @@
         }
         .logo-mastel {
             margin-top:-5px;
+        }
+        .number-phone-font {
+            font-family: Arial, "Helvetica Neue";
+            font-weight:550;
+            /* font-size:17px; */
         }
         @media (min-width: 1100px) {
             /* .right-page-home-result-home {
@@ -52,6 +58,10 @@
                 height: 100%;
             }
             .right-page-home-result {
+                background:#F2F0F0;
+                height: 100%;
+            }
+            .right-page-home-result-order {
                 background:#F2F0F0;
                 height: 100%;
             }

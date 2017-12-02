@@ -6,7 +6,9 @@ use Auth;
 use App\User;
 use App\Order;
 use App\Tukang;
+use App\Mail\Ordered; // mail ordered
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -38,6 +40,10 @@ class OrderController extends Controller
             'user_id'         => Auth::user()->id,
             'tukang_id'       => $masseus_id
         ]);
+
+        // fungsi untuk kirim email ke user setelah proses pemesanan 
+        Mail::to(Auth::user()->email)->send(new Ordered($order));
+        // end prosess
 
         $request->session()->flash('notification', 'Sukses Pesan Tukang Pijit');
         return redirect('order/masseus/' . $masseus_id);

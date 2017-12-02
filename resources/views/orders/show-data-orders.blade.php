@@ -13,7 +13,7 @@
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>
                             <li> {{ Auth::user()->email }} </li>
-                            <li> {{ Auth::user()->number_phone }} </li>
+                            <li> <span class="number-phone-font"> {{ Auth::user()->number_phone }} </span> </li>
                         </ul>
 
                     </div>
@@ -22,16 +22,16 @@
 
             <div class="col-md-9 right-page-settings">
                 <div class="row">
-                    <h3 class="masseus-info text-center"> Data Booking Customer </h3>   
+                    <h3 class="masseus-info text-center" style="font-size:21px;"> Data Pemesanan Pelanggan </h3>   
                 </div>
 
 
 
-                <div class="row col-md-offset-0">  
+                <div class="row col-md-offset-0"> 
                 @if(count($orders) < 6)
                     <div class="col-md-12 right-page-home-result" style="margin-top:30px;">
                 @else
-                    <div class="col-md-12 right-page" style="margin-top:30px;">
+                    <div class="col-md-12 right-page-home-result-order" style="margin-top:30px;">
                 @endif
                   <div class="table-responsive" style="background:#fff;">
                    <table class="table table-responsive table-hover">

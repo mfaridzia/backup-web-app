@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Mail\userRegistered;
 // override
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
 
@@ -72,13 +74,11 @@ class RegisterController extends Controller
         // photo
         $filename = time() . '.png';
         $request->file('photo')->storeAs('public/photo', $filename);
+        // end prosess photo
 
         event(new Registered($user = $this->create( $request->all() )));
 
-        $this->guard()->login($user);
-
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
+        return redirect('/login')->with('warning-register', 'Silahkan cek email untuk mengaktifkan akun');
     }
 
     /**
@@ -90,7 +90,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $filename = time() . '.png';
-        return User::create([
+        $user = User::create([
             'name'     => $data['name'],
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
@@ -98,7 +98,38 @@ class RegisterController extends Controller
             'age'      => $data['age'],
             'gender'   => $data['gender'],
             'number_phone' => $data['number_phone'],
-            'photo'    => $filename
+            'photo'    => $filename,
+            'token'    => str_random(20) // generate token random
         ]);
+
+        // kirim email ke user untuk tahap validasi
+        Mail::to($user->email)->send(new userRegistered($user));
+
     }
+
+    /*
+        fungsi untuk verifikasi token dari email user
+    */
+    public function verify_register($token, $id) 
+    {
+        // cari data user yg melakukan validasi
+        $user = User::find($id);
+        if(!$user)
+            return abort(404);
+        
+        // cek apakah token user valid
+        if($user->token != $token) {
+            return redirect('login')->with('warning', 'Token tidak cocok');
+        }
+
+        // mengubah status user menjadi 1
+        $user->status = 1;
+        $user->save();
+
+        // login dan redirect user ke halaman home jika status sudah = 1
+        $this->guard()->login($user);
+        return redirect('/home');
+        
+    }
+
 }

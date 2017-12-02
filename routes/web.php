@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 
+Route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
+
 Route::get('/syarat', function() {
     return view('syarat');
 });

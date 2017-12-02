@@ -13,7 +13,7 @@
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>
                             <li> {{ Auth::user()->email }} </li>
-                            <li> {{ Auth::user()->number_phone }} </li>
+                            <li> <span class="number-phone-font"> {{ Auth::user()->number_phone }} </span> </li>
                         </ul>
 
                     </div>

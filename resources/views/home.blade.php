@@ -17,7 +17,7 @@
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>
                             <li> {{ Auth::user()->email }}</li>
-                            <li> {{ Auth::user()->number_phone }} </li>
+                            <li> <span class="number-phone-font"> {{ Auth::user()->number_phone }} </span> </li>
                         </ul>
 
                         <div class="row">
@@ -66,7 +66,7 @@
 
                             <ul class="list-masseus text-center">
                                 <li> <b> {{ $masseus->name }} </b> </li> 
-                                <li> <b> Tarif : Rp. {{ $masseus->tariff }} </b> </li>
+                                <li> <b class="number-phone-font"> Tarif : Rp. {{ $masseus->tariff }} </b> </li>
                             </ul>
 
                             <center> <a href="/masseus/{{ $masseus->id }}" class="btn btn-success"> Lihat Detail </a> </center>  

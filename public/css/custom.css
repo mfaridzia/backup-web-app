@@ -14,10 +14,11 @@
     padding: 10px;
     /* margin-top:22px; */
     border:1px solid #fff;
+    font-family: sans-serif;
 }
 .right-page-single-page {
     background:#F2F0F0;
-    height: 112vh;
+    height: 120vh;
 }
 .right-page-home-result-home {
     background:#F2F0F0;
@@ -36,6 +37,10 @@
 .left-page {
     background: #ffffff;
     height:0 auto;
+}
+.right-page-home-result-order {
+    background:#F2F0F0;
+    height: 100vh;
 }
 .right-page {
     background:#F2F0F0;
@@ -111,9 +116,27 @@
     font-weight: bold;
     /* font-weight: normal; */
 }
+
+/* Override default background bootstrap */
+/* .pagination > li > a, .pagination > li > span {
+    color: green; 
+} */
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background: #00AE86;
+    border-color: #00AE86;
+}
+
 .pagination {
     margin-left:115px;
 }
+
+/* Override default background bootstrap */
 
 /* LOGIN CUSTOME PAGE */
 #container-page {
