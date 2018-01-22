@@ -145,7 +145,7 @@
                 </div>
 
                 <div class="col-md-6">
-                     <img src="{{ asset('img/image-home.png') }}" alt="image-home-mastel" class="image-home">
+                     <img src="{{ asset('img/image-home-4.png') }}" alt="image-home-mastel" class="image-home">
                 </div>
 
             </div>

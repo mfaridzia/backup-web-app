@@ -10,6 +10,7 @@
 
     <h1> Register Akun MasTel </h1>
     <a href="http://localhost:8000/verify/{{ $user->token }}/{{ $user->id }}"> Klik link ini untuk mengaktifkan akun </a>
+    <p> Salam hangat dari MasTel, Terimakasih Sudah Melakukan Registrasi </p>
     
 </body>
 </html>

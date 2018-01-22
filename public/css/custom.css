@@ -88,6 +88,13 @@
 }
 .img-user {
     margin-bottom: 20px;
+    border-radius: 50%; 
+    border:1px solid #00AE86; 
+    width:130px; 
+    height:120px;
+}
+.img-user:hover {
+    opacity: 0.9;
 }
 .account_settings {
     background: #fff;

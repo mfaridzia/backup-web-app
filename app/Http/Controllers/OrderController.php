@@ -45,7 +45,7 @@ class OrderController extends Controller
         Mail::to(Auth::user()->email)->send(new Ordered($order));
         // end prosess
 
-        $request->session()->flash('notification', 'Sukses Pesan Tukang Pijit');
+        $request->session()->flash('notification', 'Sukses Pesan Tukang Pijit, Silahkan cek email untuk info pemesanan anda');
         return redirect('order/masseus/' . $masseus_id);
         
     }
