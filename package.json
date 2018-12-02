@@ -1,5 +1,4 @@
 {
-    "_comment": "just comment in json files",
     "private": true,
     "scripts": {
         "dev": "npm run development",
