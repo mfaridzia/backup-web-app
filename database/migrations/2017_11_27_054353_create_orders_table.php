@@ -16,10 +16,14 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
-            $table->timestamps('order_date');
+            $table->date('order_date');
             $table->text('booking_address');
-            $table->timestamps('start_time');
-            $table->timestamps('end_time');
+            //$table->timestamp('start_time')->nullable();
+            $table->time('start_time');
+            //$table->timestamps('start_time');
+            //$table->timestamp('end_time')->nullable();
+            //$table->timestams('end_time');
+            $table->time('end_time');
             $table->double('total_peyment');
             $table->string('status', 20);
             $table->timestamps();

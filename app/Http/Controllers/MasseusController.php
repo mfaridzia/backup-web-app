@@ -53,9 +53,8 @@ class MasseusController extends Controller
             'tariff'       => 'required'
         ]);
 
-        // proses simpan foto
-        $filename = time() . '.png';
-        $request->file('photo')->storeAs('public/photo', $filename);
+        $name = 'mastel-' . time() . '.' . $request->file('photo')->extension();
+        $request->file('photo')->storeAs('public/photo', $name);
         
         $tukang = Tukang::create([
             'name'         => $request->name,
@@ -63,7 +62,7 @@ class MasseusController extends Controller
             'number_phone' => $request->number_phone,
             'age'          => $request->age,
             'gender'       => $request->gender,
-            'photo'        => $filename,
+            'photo'        => $name,
             'tariff'       => $request->tariff,
             'status'       => 'testdata',
         ]);

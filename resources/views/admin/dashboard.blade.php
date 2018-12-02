@@ -12,7 +12,7 @@
 
                 <div class="row">
                     <div class="col-md-12 info-user">
-                        <center> <img src="{{ asset('storage/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-circle img-user" width="150" height="100"> </center>
+                        <center> <img src="{{ asset('storage/public/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-circle img-user" width="150" height="100"> </center>
 
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>

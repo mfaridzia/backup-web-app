@@ -8,7 +8,7 @@
             <div class="col-md-3 left-page">
                 <div class="row">
                     <div class="col-md-12 info-user">
-                        <center> <img src="{{ asset('storage/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-user"> </center>
+                        <center> <img src="{{ asset('storage/public/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-user"> </center>
 
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>

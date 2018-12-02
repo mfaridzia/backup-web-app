@@ -71,10 +71,8 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        // photo
-        $filename = time() . '.png';
-        $request->file('photo')->storeAs('public/photo', $filename);
-        // end prosess photo
+        $name = 'mastel-' . time() . '.' . $request->file('photo')->extension();
+        $request->file('photo')->storeAs('public/photo', $name);
 
         event(new Registered($user = $this->create( $request->all() )));
 
@@ -89,7 +87,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $filename = time() . '.png';
+        $name = 'mastel-' . time() . '.' . $data['photo']->extension();
         $user = User::create([
             'name'     => $data['name'],
             'email'    => $data['email'],
@@ -98,7 +96,7 @@ class RegisterController extends Controller
             'age'      => $data['age'],
             'gender'   => $data['gender'],
             'number_phone' => $data['number_phone'],
-            'photo'    => $filename,
+            'photo'    => $name,
             'token'    => str_random(20) // generate token random
         ]);
 

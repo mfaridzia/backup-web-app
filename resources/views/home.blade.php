@@ -12,7 +12,7 @@
 
                 <div class="row">
                     <div class="col-md-12 info-user">
-                        <center> <img src="{{ asset('storage/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-user"> </center>
+                        <center> <img src="{{ asset('storage/public/photo/' . Auth::user()->photo) }}" alt="" class="img-responsive img-user"> </center>
 
                         <ul class="list-info-user">
                             <li> {{ Auth::user()->name }} </li>
@@ -62,7 +62,7 @@
                 <div class="row col-md-offset-1 ">  
                     @foreach($masseuss as $masseus)
                         <div class="col-md-5 col-sm-5 col-xs-5 jasa jasa-1 home-list">
-                            <center> <img src="{{ asset('storage/photo/' . $masseus->photo) }}" alt="" class="img-responsive img-circle img-masseus" width="70" height="50"> </center>
+                            <center> <img src="{{ asset('storage/public/photo/' . $masseus->photo) }}" alt="" class="img-responsive img-circle img-masseus" width="70" height="50"> </center>
 
                             <ul class="list-masseus text-center">
                                 <li> <b> {{ $masseus->name }} </b> </li> 
