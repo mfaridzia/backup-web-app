@@ -1,2 +1,2 @@
-Mastel Web app
+Mastel Web App
 ===============

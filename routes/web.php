@@ -1,6 +1,6 @@
 <?php
 
-// Halaman index
+// halaman index
 Route::get('/', function () {
     return view('welcome');
 });
